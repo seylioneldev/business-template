@@ -1,8 +1,15 @@
+import s from "./style.module.css";
+import { Header } from "./components/Header/Header";
+import { Outlet } from "react-router-dom";
+import { BodyContainer } from "./pages/Products/components/Body-Container/BodyContainer";
 
-function App() {
+function HomePage() {
   return (
-      <div>TEST</div>
+    <>
+      <Header />
+      <Outlet />
+    </>
   );
 }
 
-export default App;
+export default HomePage;
