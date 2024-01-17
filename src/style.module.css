@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    background-color: beige;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    justify-content: space-between;
+    
+    
+}

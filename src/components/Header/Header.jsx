@@ -14,7 +14,7 @@ export function Header() {
       <div className={`${s.container}`}>
         <div className={`${s.colonne1}`}>
           <div className={`${s.container1}`}>
-            <Logo onClick={()=>navigate("/")}  title="LOGO" ></Logo> 
+            <Logo onClick={()=>navigate("/homepage")}  title="LOGO" ></Logo> 
           </div>
         </div>
         <div className={`${s.colonne2}`}>
