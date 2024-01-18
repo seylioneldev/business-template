@@ -1,5 +1,7 @@
 import React from "react";
 import App from "./App";
+import { Provider } from "react-redux";
+import { store } from "./store/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Products } from "./pages/Products/Products";
 import ReactDOM from "react-dom/client";
@@ -14,6 +16,7 @@ import s from "./style.module.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <Provider store={store}>
   <div className={`${s.container}`}>
     <BrowserRouter>
       <Routes>
@@ -29,4 +32,5 @@ root.render(
       </Routes>
     </BrowserRouter>
   </div>
+  </Provider>
 );
