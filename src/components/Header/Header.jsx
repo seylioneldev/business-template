@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 
 
-export function Header() {
+export function Header({user}) {
   const navigate = useNavigate()
 
 
@@ -23,7 +23,7 @@ export function Header() {
         <div className={`${s.colonne3}`}>
           <div onClick={()=>navigate("/products")} className={`${s.container3}`}>Products</div>
           <div onClick={()=>navigate("/about-us")} className={`${s.container3}`}>About us</div>
-          <div onClick={()=>navigate("/contact-us")} className={`${s.container3}`}>Contact us</div>
+          <div onClick={()=>navigate("/contact-us")} className={`${s.container3}`}>{user[0].email} </div>
         </div>
         <div className={`${s.colonne4}`}>
           <div  onClick={()=>navigate("/cart")} className={`${s.container4}`}>Cart</div>
