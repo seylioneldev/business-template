@@ -6,7 +6,7 @@ import { setNoteList } from "./store/note-slice/note-slice";
 import { useEffect, useState } from "react";
 import { BodyContainer } from "./pages/Products/components/Body-Container/BodyContainer";
 import { Footer } from "./components/Footer/Footer";
-import { NoteAPI } from "./api";
+import { BusinessUserAPI } from "./api";
 
 
 
@@ -19,7 +19,7 @@ function App() {
 
 
   useEffect(() => {
-    NoteAPI.fetchAll()
+    BusinessUserAPI.fetchAll()
       .then(data => {
         setUsers(data);
         console.log(data); // Affiche les données dans la console
