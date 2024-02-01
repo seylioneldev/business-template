@@ -13,6 +13,7 @@ import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
 import { HomePage } from "./pages/HomePage/HomePage";
 import s from "./style.module.css";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,9 +27,11 @@ root.render(
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
         </Route>
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
       </Routes>
     </BrowserRouter>
   </div>

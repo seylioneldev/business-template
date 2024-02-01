@@ -1,37 +1,40 @@
 import s from "./style.module.css";
 import { Header } from "./components/Header/Header";
 import { Outlet } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setNoteList } from "./store/note-slice/note-slice";
-import { useEffect, useState } from "react";
-import { BodyContainer } from "./pages/Products/components/Body-Container/BodyContainer";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserList } from "./store/user-slice/user-slice";
+import { useEffect} from "react";
 import { Footer } from "./components/Footer/Footer";
 import { BusinessUserAPI } from "./api";
 
 
 
+
+
 // BusinessAPI.fetchPopulars()
 function App() {
+  const dispatch = useDispatch()
+  const userList = useSelector((store)=>store.USER.userList)
+
+  async function fetchAllUser(){
+    const userList = await BusinessUserAPI.fetchAll()
+    dispatch(setUserList(userList))
+    console.log(userList)
+
+  }
 
 
-  const [users, setUsers] = useState([]);
-  console.log('Works Fine !', users[0].email);
 
 
   useEffect(() => {
-    BusinessUserAPI.fetchAll()
-      .then(data => {
-        setUsers(data);
-        console.log(data); // Affiche les données dans la console
-      })
-      .catch(error => console.error("Erreur lors de la récupération des données:", error));
-  }, []);
+    fetchAllUser()
+  }, [dispatch]);
 
 
 
   return (
     <>
-      <Header user={users} />    
+      <Header info={userList[0]} />    
       <Outlet />
       <Footer/>
  
